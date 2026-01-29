@@ -1,7 +1,7 @@
 body{
     margin:0px;
     padding: auto;
-    font-size: 25px;
+    font-size:25px;
     font-family: "Inter";
     color: white;
     background-image: linear-gradient(to right, #74ebd5, #ACB6E5);
@@ -12,11 +12,24 @@ body{
     padding-left: 5%;
     padding-top: 5%;
 }
+#auto-start{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+#pomodoros, #min, #min-break, #min-longbreak{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    font: inherit;
+}
 
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     width: 100vw;
     height: 100vh;
 }
@@ -24,7 +37,16 @@ body{
     text-align: center;
     align-items: center;
     background-color: rgb(132, 132, 132);
-    height: 350px;
+    height: 450px;
+    width: 300px;
+    border-radius: 10px;
+}
+.content-options{
+    visibility: hidden;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(132, 132, 132);
+    height: 550px;
     width: 300px;
     border-radius: 10px;
 }
@@ -38,7 +60,7 @@ body{
     background-color: rgb(132, 132, 132);
     color: white;
 }
-#action{
+.action{
     width: 200px;
     height: 50px;
     border-radius: 5px;

@@ -15,10 +15,37 @@
             <h1 id="timer">25:00</h1>
             <p id="state"><strong>Work</strong></p>
             <p id="sections">0/4</p>
-            <button id="action">Play</button>
+            <button class="action" id="action">Play</button>
+            <br><br>
+            <button class="action" id="configs">Settings</button>
             
+        </div>
+        <div class="content-options" id="content-configs">
+            <br>
+            <label for="auto-start">Auto start:</label>
+            <br>
+            <input type="checkbox" name="auto" id="auto-start">
+            <br>
+            <label for="auto-start">Pomodoros:</label>
+            <br>
+            <input type="number" min="1" name="cycles" id="pomodoros" value="4">
+            <br><br>
+            <label for="auto-start">Min/Pomodoro:</label>
+            <br>
+            <input type="number" min="1" name="cycles" id="min" value="25">
+            <br><br>
+            <label for="auto-start">Min/Short Break:</label>
+            <br>
+            <input type="number" min="1" name="break" id="min-break" value="5">
+            <br><br>
+            <label for="auto-start">Min/Long Break:</label>
+            <br>
+            <input type="number" min="1" name="break" id="min-longbreak" value="30">
+            <br><br>
+            <button class="action" id="save">Save</button>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+<script src="configs.js"></script>
 </html>
