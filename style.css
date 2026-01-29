@@ -1,0 +1,50 @@
+body{
+    margin:0px;
+    padding: auto;
+    font-size: 25px;
+    font-family: "Inter";
+    color: white;
+    background-image: linear-gradient(to right, #74ebd5, #ACB6E5);
+    overflow: hidden;
+}
+
+.configurations{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.content{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(132, 132, 132);
+    height: 350px;
+    width: 300px;
+    border-radius: 10px;
+}
+#options{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    background-color: rgb(132, 132, 132);
+    color: white;
+}
+#action{
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+}
