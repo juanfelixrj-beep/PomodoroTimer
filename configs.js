@@ -19,6 +19,7 @@ save.addEventListener("click", () =>{
     BreakTimeM = parseInt(min_break.value)
     Totalsections = parseInt(cycles.value)
     auto_start_timer = auto_start.checked
-    
+    render()
+
     alert("Configurações salvas!")
 })
