@@ -3,7 +3,10 @@ const lb_time = document.querySelector("#timer")
 const lb_state = document.querySelector("#state")
 const lb_section = document.querySelector("#sections")
 const show_configs = document.querySelector("#configs")
-let configs_panne = document.querySelector("#content-configs")
+const state_panne = document.querySelector(".show-state")
+const form_options = document.querySelector("#form-options")
+const audio = new Audio("assets/alarm.mp3")
+const configs_panne = document.querySelector("#content-configs")
 
 let counting = false
 
@@ -46,6 +49,18 @@ function render(){
     lb_section.textContent = sections + "/" + Totalsections
 }
 
+function setStateStyle(){
+    let state_show = "work"
+    if(state == "Work"){
+        state_show = "work"
+    }else if(state == "Short Break"){
+        state_show = "break"
+    }else if(state == "Long Break"){
+        state_show = "long-break"
+    }
+    state_panne.className = "show-state " + state_show
+}
+
 function nextState(){
     if(state == "Work"){
         sections += 1
@@ -55,10 +70,14 @@ function nextState(){
             timeM = LongBreakTimeM
             timeS = LongBreakTimeS
             sections = 0
+            audio.volume = 0.5
+            audio.play()
         }else{
             state = "Short Break"
             timeM = BreakTimeM
             timeS = BreakTimeS
+            audio.volume = 0.5
+            audio.play()
         }
     }else if(state == "Short Break"){
         state = "Work"
@@ -69,6 +88,7 @@ function nextState(){
         timeM  = WorkTimeM
         timeS = WorkTimeS
     }
+    setStateStyle()
     render()
 }
 
@@ -76,11 +96,14 @@ function count(){
     if(!counting){return}
 
     if(timeM == 0 && timeS == 0){
-        nextState()
-        render()
         if(auto_start_timer){
             setTimeout(count, 1000)
+        }else{
+            btn_action.innerHTML = "Play"
+            counting = false
         }
+        nextState()
+        render()
         return
     }
 
@@ -107,12 +130,30 @@ btn_action.addEventListener("click", () =>{
 })
 
 show_configs.addEventListener("click", () =>{
-    if(!show_options){
-        show_options = true
-        configs_panne.style.visibility = "visible"
-    }else{
-        show_options = false
-        configs_panne.style.visibility = "hidden"
+        configs_panne.classList.toggle("open")
+
+
+})
+
+form_options.addEventListener("submit", e =>{
+    e.preventDefault()
+    if(cycles.value == "" || min_break.value == "" || min.value == ""){
+        alert("You need to fill all the inputs")
+        return
+    }
+    if(counting){
+        alert("Stop the counter to change settings")
+        return
     }
 
+    // Atualizar configurações do script.js
+    WorkTimeM = parseInt(min.value)
+    BreakTimeM = parseInt(min_break.value)
+    LongBreakTimeM = parseInt(min_longbreak.value)
+    Totalsections = parseInt(cycles.value)
+    auto_start_timer = auto_start.checked
+    render()
+    updateConfig(WorkTimeM, BreakTimeM, LongBreakTimeM, Totalsections)
+
+    alert("Configurações salvas!")
 })
