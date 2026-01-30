@@ -124,4 +124,4 @@ Este projeto é de uso livre para fins pessoais e educacionais.
 
 ---
 
-**Desenvolvido com ❤️ para aumentar sua produtividade**
+**Desenvolvido para aumentar sua produtividade**
