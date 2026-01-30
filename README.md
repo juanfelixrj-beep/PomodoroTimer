@@ -57,6 +57,10 @@ PomodoroTimer/
 └── README.md       # Este arquivo
 ```
 
+## 📸 Screenshot
+
+![Pomodoro App Screenshot](preview(Actual)/image.png)
+
 ## 🔧 Arquivos Principais
 
 ### `index.html`
